@@ -23,11 +23,12 @@ Console.WriteLine(value: $"Quel forme voulez-vous bouger? (min 0, max {lsForme3d
 
 
 
-ConsoleKeyInfo key = Console.ReadKey();
-while (key.Key != ConsoleKey.Enter)
+ConsoleKeyInfo key = Console.ReadKey(intercept:true);
+while (Convert.ToInt32(key.KeyChar.ToString())>= lsForme3d.Count) { key = Console.ReadKey(intercept: true); }
+
+    while (key.Key != ConsoleKey.Enter)
 {
     var NB = Convert.ToInt32(key.KeyChar.ToString());
-
     Console.WriteLine($"vous avez ecrit  {NB}");
 
 
@@ -35,7 +36,7 @@ while (key.Key != ConsoleKey.Enter)
     Console.WriteLine($"{lsForme3d[NB].GetPosition()} volume;{lsForme3d[NB].GetVolume()} {lsForme3d[NB].GetNomCouleur()}");
     Console.WriteLine($"Bouger encore une forme ? (min 0, max {lsForme3d.Count - 1})");
     Console.WriteLine("Ou presser ENTER pour Quitter");
-    key = Console.ReadKey();
+    key = Console.ReadKey(intercept: true);
 }
 
 
