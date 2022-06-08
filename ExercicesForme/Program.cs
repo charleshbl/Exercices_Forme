@@ -23,15 +23,20 @@ Console.WriteLine(value: $"Quel forme voulez-vous bouger? (min 0, max {lsForme3d
 
 
 
+ConsoleKeyInfo key = Console.ReadKey();
+while (key.Key != ConsoleKey.Enter)
+{
+    var NB = Convert.ToInt32(key.KeyChar.ToString());
 
-var NB = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine($"vous avez ecrit  {NB}");
+    Console.WriteLine($"vous avez ecrit  {NB}");
 
 
-lsForme3d[NB].Avancer(4);
-Console.WriteLine($"{lsForme3d[NB].GetPosition()} volume;{lsForme3d[NB].GetVolume()} {lsForme3d[NB].GetNomCouleur()}");
-
+    lsForme3d[NB].Avancer(4);
+    Console.WriteLine($"{lsForme3d[NB].GetPosition()} volume;{lsForme3d[NB].GetVolume()} {lsForme3d[NB].GetNomCouleur()}");
+    Console.WriteLine($"Bouger encore une forme ? (min 0, max {lsForme3d.Count - 1})");
+    Console.WriteLine("Ou presser ENTER pour Quitter");
+    key = Console.ReadKey();
+}
 
 
 
