@@ -2,7 +2,7 @@
 
 namespace ExercicesForme
 {
-    public abstract class Forme : Points3D
+    public abstract class Forme : Points3D , Movements
     {
         public const float PI = 3.1416F;
         private float _volume;
@@ -42,7 +42,10 @@ namespace ExercicesForme
         {
             SetPosition(GetX() + amount, GetY(), GetZ());
         }
-
+        public void Reculer(int amount)
+        {
+            SetPosition(GetX() - amount, GetY(), GetZ());
+        }
 
     }
 }

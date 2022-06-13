@@ -24,21 +24,21 @@ Console.WriteLine(value: $"Quel forme voulez-vous bouger? (min 0, max {_scène1.
 
 
 
-ConsoleKeyInfo key = Console.ReadKey(intercept: true);
-while (Convert.ToInt32(key.KeyChar.ToString()) >= _scène1.LsFormes.Count) { key = Console.ReadKey(intercept: true); }
+var NumDeForme= Console.ReadLine();
+while (Convert.ToInt32(NumDeForme) >= _scène1.LsFormes.Count) { NumDeForme= Console.ReadLine();; }
 
-while (key.Key != ConsoleKey.Enter)
+do
 {
-    var NB = Convert.ToInt32(key.KeyChar.ToString());
+    var NB = Convert.ToInt32(NumDeForme);
     Console.WriteLine($"vous avez ecrit  {NB}");
 
 
     _scène1.LsFormes[NB].Avancer(4);
-    Console.WriteLine($"{_scène1.LsFormes[NB].GetPosition()} volume;{_scène1.LsFormes[NB].GetVolume()} {_scène1.LsFormes[NB].GetNomCouleur()}");
+    Console.WriteLine($"{_scène1.LsFormes[NB].GetPositionTXT()} volume;{_scène1.LsFormes[NB].GetVolume()} {_scène1.LsFormes[NB].GetNomCouleur()}");
     Console.WriteLine($"Bouger encore une forme ? (min 0, max {_scène1.LsFormes.Count - 1})");
-    Console.WriteLine("Ou presser ENTER pour Quitter");
-    key = Console.ReadKey(intercept: true);
-}
+    Console.WriteLine("Ou presser Escape pour Quitter");
+    NumDeForme = Console.ReadLine();
+} while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
 
 //List<Forme> lsForme3d = new List<Forme>();

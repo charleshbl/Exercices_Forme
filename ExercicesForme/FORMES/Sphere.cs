@@ -8,7 +8,7 @@ namespace ExercicesForme.FORMES
 {
     internal class Sphere : Forme
     {
-        private float _rayon;
+        private float _rayon { get; set; }
        
        
 

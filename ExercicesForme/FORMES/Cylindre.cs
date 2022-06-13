@@ -4,8 +4,8 @@ namespace ExercicesForme.FORMES
 {
     internal class Cylindre : Forme
     {
-        private float _Rayon;
-        private float _Hauteur;
+        private float _Rayon { get; set; }
+        private float _Hauteur { get; set; }    
 
 
 

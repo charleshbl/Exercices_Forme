@@ -25,7 +25,7 @@
              else if (_NomCouleur == _Vert)
              {
                  
-               SetRGB(0, 255, 0);
+               SetRGB(0, 255, 0);                 
              }
              else 
              {

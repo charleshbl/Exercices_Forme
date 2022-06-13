@@ -4,7 +4,7 @@ namespace ExercicesForme.FORMES
 {
     internal class Cube : Forme
     {
-        private float _arrete = 1;
+        private float _arrete { get; set; }
       
        
 
