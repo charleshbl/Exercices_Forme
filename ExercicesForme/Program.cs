@@ -9,7 +9,7 @@ Console.WriteLine($"Combien de Cube voulez-vous ? 0-9 ");
 _NombreDeCubes = Convert.ToInt32(Console.ReadKey(intercept:true).KeyChar.ToString());
 Console.WriteLine($"Combien de Sphere voulez-vous ? 0-9 ");
 _NombreDeSphere = Convert.ToInt32(Console.ReadKey(true).KeyChar.ToString());
-Console.WriteLine($"Combien de sphere voulez-vous ? 0-9 ");
+Console.WriteLine($"Combien de Cylindre voulez-vous ? 0-9 ");
  _NombreDeCylindres =Convert.ToInt32(Console.ReadKey(true).KeyChar.ToString());
 
 Scène _scène1 = new Scène(_NombreDeCubes, _NombreDeSphere, _NombreDeCylindres);
